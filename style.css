@@ -3,10 +3,16 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+    background-image: url(images/img-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
 /*--------------------------- top title ---------------------------*/
 .title{
-    color: rgb(58, 57, 57);
+    color: #fff;
     text-align: center;
     margin-top: 50px;
     font-size: 40px;
@@ -14,7 +20,7 @@
     font-family: arial;
 }
 .colorful-book{
-    color: #002A53 ;
+    color: orange ;
     font-size: 45px ;
 }
 
@@ -37,24 +43,44 @@
     padding: 5px;
 }
 
+/*-------------------------- search result show digit ------------------------*/
+.result-digit{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 5%;
+    line-height: 0px;
+}
 
 /*-------------------------- search result show ------------------------*/
 #display-result{
-    margin-top: 30px;
+    width: 85%;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 .results{
     background-color: rgb(228, 228, 228);
-    margin: 10px;
+    margin:20px 10px;
     padding:10px;
     font-size: 20px;
     border-radius: 8px;
     line-height: 40px;
+    height: 500px;
 }
 
+/*---------------- empty error --------------*/
 .empty-error{
-    color: rgb(43, 0, 0);
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 5%;
+}
+/*---------------------- random error -----------------*/
+.random-error{
+    color: #fff;
     text-align: center;
     font-size: 50px;
     font-weight: 700;
