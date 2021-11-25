@@ -8,17 +8,42 @@
     <title>Book Archive</title>
     <!---------------------------------- css stylsheet ------------------------->
     <link rel="stylesheet" href="style.css">
+
+    <!-------------------------- bootstrap css -------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <h1 class="title">Welcome to <span class="colorful-book">Book's World</span>!!!</h1>
     </header>
+
     <!---------------------------------- Search fild --------------------------->
     <div class="search">
-        <input type="text" id="input-field">
+        <input type="text" id="input-field" placeholder="Type book name">
         <button onclick="loadBooks()">Search</button>
     </div>
+
+    <!------------------------------ spinner adding -------------------------->
+    <div id="loading">
+        <div class="d-flex justify-content-center spinner-style">
+            <div id="spinner" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- book images -->
+    <div id="book-images" class="books">
+        <div><img src="images/book-1.jpg" alt=""></div>
+        <div><img src="images/book-5.jpg" alt=""></div>
+        <div><img src="images/book-4.jpg" alt=""></div>
+        <div><img src="images/book-6.jpg" alt=""></div>
+        <div><img src="images/book-7.jpg" alt=""></div>
+        <div><img src="images/book-8.jpg" alt=""></div>
+    </div>
+
 
 
     <!------------------------ search field and random error message ---------------------->

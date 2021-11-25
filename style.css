@@ -8,7 +8,16 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    width: 100%;
+}
+/*-------- default image ---------*/
+.books{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.books img{
+    width: 350px;
+    height: 400px;
+    margin:10% 0% 0% 10%;
 }
 /*--------------------------- top title ---------------------------*/
 .title{
@@ -41,7 +50,19 @@ body{
     width: 80px;
     font-size: 18px;
     padding: 5px;
+    border-radius: 5px;
 }
+
+/*---------------------------- spinner loading ------------------*/
+#loading{
+    color: #fff;
+    margin-top: 100px;
+    display: none;
+}
+#spinner{
+    width: 100px; height: 100px;
+}
+
 
 /*-------------------------- search result show digit ------------------------*/
 .result-digit{

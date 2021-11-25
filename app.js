@@ -1,8 +1,24 @@
+//------------------------- spinner loading ----------------------------//
+const toggleSpinner = displayStyle => {
+    document.getElementById('loading').style.display = displayStyle;
+}
+//book images
+const bookImages = () => {
+    const displayImages = document.getElementById('book-images');
+    displayImages.textContent = '';
+}
 
+//-------------------------- search book field -------------------------//
 const loadBooks = () => {
     const inputField = document.getElementById('input-field');
     const inputFieldText = inputField.value;
-    //----------------------- empty input error ---------------------------//
+
+    bookImages()
+
+    //------------show spinner --------------//
+    toggleSpinner('block');
+
+    //------------- empty input error -----------//
     if (inputFieldText == '') {
         const emptyError = document.getElementById('empty-error');
         emptyError.textContent = '';
@@ -12,7 +28,7 @@ const loadBooks = () => {
         emptyError.appendChild(p)
     }
 
-    //------------------------ random type error -------------------------//
+    //-------------- random type error ---------------//
     if (inputFieldText.length === '0') {
         console.log('random name is not allowd')
         const randomError = document.getElementById('random-error');
@@ -22,7 +38,7 @@ const loadBooks = () => {
         randomError.appendChild(p);
     }
 
-    //------------------------- api link add ---------------------------//
+    //------------------- api link add ---------------------//
     else {
         const url = `https://openlibrary.org/search.json?q=${inputFieldText}`;
         fetch(url)
@@ -30,7 +46,7 @@ const loadBooks = () => {
             .then(data => displayResult(data.docs.slice(0, 20)))
     }
 
-    //---------------------- clear search field ------------------------//
+    //------- clear search field ----------//
     inputField.value = '';
 };
 
@@ -46,10 +62,8 @@ const displayResult = books => {
     searchResult.textContent = '';
     books.forEach(number => {
         const p = document.createElement('p');
-        p.classList.add('result-digit')
-        p.innerText = `Search result found: ${number}`;
+        p.classList.add('result-digit');
         searchResult.appendChild(p);
-        // console.log(number)
     });
 
     //------------------ result display -----------------//
@@ -67,4 +81,7 @@ const displayResult = books => {
         bookContainer.appendChild(div);
 
     });
+
+    //------ spinner call and display none ------//
+    toggleSpinner('none')
 }
