@@ -57,14 +57,6 @@ const displayResult = books => {
     //------- clear previous result ---------//
     bookContainer.textContent = '';
 
-    //------------------ result found digit -----------------//
-    const searchResult = document.getElementById('result-digit');
-    searchResult.textContent = '';
-    books.forEach(number => {
-        const p = document.createElement('p');
-        p.classList.add('result-digit');
-        searchResult.appendChild(p);
-    });
 
     //------------------ result display -----------------//
     books.forEach(book => {
